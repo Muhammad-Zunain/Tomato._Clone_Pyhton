@@ -1,0 +1,747 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg-color: #3B3C36;
+    --body-text-color: #fff;
+
+    --font--weight-normal: normal;
+    --font-weight-medium: 600;
+    --font--weight-bold: bold;
+    --font--weight-bolder: bolder;
+
+    --primary-color: tomato;
+    --white-color: #fff;
+
+    --smallest-font: 1.5rem;
+    --small-font: 2rem;
+    --medium-font: 3rem;
+    --large-font: 3.5rem;
+    --biggest-font: 4rem;
+    --extra-big-font: 5rem;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--body-bg-color);
+    color: var(--body-text-color);
+    font-family: "Nunito", sans-serif;
+}
+
+h2 {
+    font-size: var(--extra-big-font);
+}
+
+h3 {
+    font-size: var(--biggest-font);
+    line-height: 60px;
+}
+
+h4 {
+    font-size: var(--small-font);
+    line-height: 40px;
+}
+
+p {
+    font-size: var(--smallest-font);
+    line-height: 25px;
+}
+
+span {
+    display: block;
+    text-transform: capitalize;
+    color: var(--primary-color);
+    font-size: var(--small-font);
+    line-height: 45px;
+}
+
+a {
+    text-decoration: none;
+    font-size: var(--smallest-font);
+    color: var(--body-text-color);
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.primary__btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: var(--smallest-font);
+    outline: none;
+    border: 2px solid var(--primary-color);
+    padding: 1.5rem 3rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.primary__btn:hover {
+    box-shadow: 0px 0px 10px 5px var(--primary-color);
+}
+
+.secondary__btn {
+    margin-top: 2rem;
+    background-color: var(--white-color);
+    border: 2px solid var(--white-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    outline: none;
+    /* border: none;? */
+}
+
+.secondary__btn:hover {
+    box-shadow: 0px 0px 10px 5px var(--white-color);
+}
+
+
+@keyframes fadeAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* .fade-enter-active,.fade-leave-active {
+    transition: opacity.5s;
+} */
+
+/* <==================================================== HEADER ========================================================> */
+
+/* <----------------------------------- Navbar -----------------------------------> */
+
+.nav__bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.nav__logo {
+    cursor: pointer;
+}
+
+.nav__search,
+.nav__cart {
+    cursor: pointer;
+    position: relative;
+}
+
+.cart_check {
+    /*  Products In Cart Or Not */
+    display: none;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    right: -25%;
+    top: -20%;
+}
+
+.nav__item {
+    display: flex;
+    align-items: center;
+    column-gap: 3rem;
+}
+
+.nav__link {
+    /*  Nav link (Home,...)  */
+    font-weight: var(--font-weight-medium);
+    transition: all 0.2s ease-in;
+}
+
+.nav__link:not(.active):hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.nav__other {
+    display: flex;
+    align-items: center;
+    column-gap: 4rem;
+}
+
+.customer__account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    transition: none;
+}
+
+/* <----------------------------------- Hero header -----------------------------------> */
+
+.header__con {
+    margin-top: 1.5rem;
+    height: 75vh;
+}
+.hearder__content {
+    background-image: url(./image/assets/header_img.png);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    /* opacity: 0.8; */
+    padding-left: 8rem;
+    padding-top: 17rem;
+    animation: fadeAnimation 1s linear forwards ;
+}
+
+/* <----------------------------------- Fitltered Menu Item Selection -----------------------------------> */
+
+.menu__content {
+    margin-top: 8rem;
+}
+.explore__line {
+    display: inline-block;
+    width: 10rem;
+    height: 2px;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    margin-bottom: 1rem;
+}
+.main__menu__content {
+    display: flex;
+    column-gap: 2.3rem;
+    margin-top: 3rem;
+    overflow-x: scroll;
+
+}
+.main__menu__content::-webkit-scrollbar {
+    visibility: hidden;
+}
+.menu__content__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150px;
+    height: 200px;
+    padding: 1rem;
+}
+.food__image__active {
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+}
+
+/* <----------------------------------- Main Food Items -----------------------------------> */
+
+.menu__food__content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 3rem;
+}
+.menu__food {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 280px;
+    animation: fadeAnimation 1s linear forwards;
+}
+.menu__food:hover .food__img .food__icon {
+    scale: 1.1;
+}
+
+.food__img {
+    position: relative;
+    height: 250px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+}
+.food__img .food__icon {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+    transition: all 0.5s ease-in;
+}
+.food__img .add__icon {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 999;
+    height: 50px;
+    object-fit: cover;
+}
+.food__img .add__icon:hover {
+    border: 3px solid var(--primary-color);
+}
+.quantity__cart__food {             
+    display: none;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    background-color: var(--white-color);
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    padding: 0.6rem;
+    border-radius: 50px;
+    z-index: 999;
+}
+.quantity__cart__food span {
+    font-weight: var(--font--weight-bold);
+}
+.quantity__cart__food .increased__quantity,
+.quantity__cart__food .decreased__quantity {
+    cursor: pointer;
+}
+.food__content {
+    padding: 2rem;
+    box-shadow: 0px 2px 5px var(--white-color);
+}
+
+/* <----------------------------------- About The Tomato. -----------------------------------> */
+
+.about__sec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10rem auto;
+    padding: 6rem;
+}
+.about__img img {
+    object-fit: cover;
+    width: 600px;
+    height: 400px;
+    box-shadow: -40px 40px 00px var(--primary-color);
+    animation: fadeAnimation 3s linear forwards;
+}
+.about__contents {
+    padding: 5rem;
+}
+.download__text {
+    margin: 10rem 0;
+    text-align: center;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.download__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+}
+.download__img img {
+    cursor: pointer;
+}
+.about__header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./image/assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -99;
+    animation: fadeAnimation 2s ;
+}
+.about__restaurant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 3rem;
+    flex-direction: column;
+    margin-top: 6rem;
+}
+.restaurant__img {
+    display: grid;
+    grid-template-columns: 380px 400px;
+    grid-template-rows: 265px 300px 250px;
+    justify-content: center;
+    gap: 2rem;
+}
+.restaurant__img .res_img1 {
+    grid-row: 1/ 3;
+    width: 380px;
+    height: auto;
+    object-fit: cover;
+    animation: fadeAnimation 2s forwards ;
+}
+.restaurant__img .res_img2 {
+    height: 267px;
+    width: auto;
+    animation: fadeAnimation 2s forwards ;
+}
+.restaurant__img .res_img3 {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    grid-row: 3/2;
+    animation: fadeAnimation 2s forwards ;
+}
+.chef__content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 2rem;
+
+}
+.chef__heading {
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 2rem;
+}
+.chef__heading span {
+    width: 10%;
+    display: block;
+    height: 4px;
+    background-color: var(--white-color);
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+.chefs {
+    position: relative;
+    width: 380px;
+    height: 320px;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeAnimation 2s forwards ;
+}
+.chef__content .chef__image {
+    object-fit: cover;
+}
+.chefs .chef__contact {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+    transition: all 0.5s ease-in-out;
+}
+.chef__content .chef__contact img {
+    cursor: pointer;
+}
+.chef__contact::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#000, tomato);
+    z-index: -99;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 0.7s ease-in-out;
+}
+.chefs:hover .chef__contact::after {
+    opacity: 0.8;
+    transform: scaleY(1);
+}
+.chefs:hover .chef__contact {
+    top: 50%;
+    opacity: 1;
+}
+
+/* <----------------------------------- Account (SignUp, Login) -----------------------------------> */
+
+.account {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./image/assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+.account__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+    padding: 3rem;
+    background-color: #1b1c19;
+    border-radius: 1rem;
+}
+.account__sub1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.account__sub1 img {
+    cursor: pointer;
+}
+.account__detail input {
+    outline: none;
+    border: none;
+    font-size: var(--smallest-font);
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    padding: 1rem;
+    color: var(--body-bg-color);
+    font-weight: var(--font--weight-bold);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+.account__detail button {
+    border-radius: 5px;
+    font-weight: var(--font--weight-bold);
+
+}
+.account__detail button:hover {
+    box-shadow: none;
+}
+.account__detail input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    box-shadow: none;
+    outline: none;
+}
+.account__sub2 {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    justify-content: flex-start;
+}
+.account__detail p {
+    font-weight: var(--font--weight-bold);
+}
+.account__detail .login,
+.account__detail .signup {
+    color: var(--primary-color);
+    font-weight: var(--font--weight-bold);
+}
+.remove__scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* <----------------------------------- Contact -----------------------------------> */
+
+.contact {
+    margin: 8rem auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/assets/about_img_1.avif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.contact__contents {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contact__detail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    width: 50%;
+}
+.contact__map,
+.contact__phone,
+.contact__email,
+.contact__fax {
+    padding: 3rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+    width: 250px;
+    height: 280px;
+    background-color: tomato;
+}
+.contact__detail img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.contact__detail p {
+    font-weight: var(--font--weight-bold);
+    text-align: center;
+}
+.contact__entry {
+    width: 600px;
+    text-align: center;
+    padding: 3rem;
+}
+.contact__entry form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
+    padding: 1rem;
+}
+.contact__entry form input {
+    width: 85%;
+    height: 5rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 2rem;
+    box-shadow: 1px 1px 10px var(--primary-color);
+}
+.contact__entry form textarea {
+    width: 85%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 2rem;
+    box-shadow: 1px 1px 10px var(--primary-color);
+}
+.contact__entry form input:focus,
+.contact__entry form textarea:focus {
+    box-shadow: none;
+    border: 1px solid #1b1c19;
+}
+
+/* <----------------------------------- Footer -----------------------------------> */
+
+.footer__content {
+    display: flex;
+    column-gap: 8rem;
+    padding: 10rem 0;
+}
+
+.footer__sub {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 600px;
+}
+
+.footer__link,
+.footer__contact {
+    width: 200px;
+}
+
+.social__link {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+/* <----------------------------------- Cart -----------------------------------> */
+
+.cart-section{
+    margin-top: 5rem;
+ }
+ 
+ .cart-section {
+    width: 100%;
+    table-layout: fixed;
+    white-space: nowrap;
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+
+ }
+.cart-section  thead td{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: var(--smallest-font);
+    text-align: center;
+    padding: 18px 0;
+    color: var(--body-text-color);
+    background-color: var(--primary-color);
+ }
+.tbody td{
+    font-size: var(--smallest-font);
+    padding: 2rem 0;
+    text-align: center;
+ }
+ .cart-section .tbody img{
+     width: 50px;
+     border-radius: 2px;
+}
+.cart-section .tbody td .removeFood{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;  
+}
+.cart-section .tbody td .QuantControl{
+    width: 25px;
+    height: 25px;  
+    cursor: pointer;
+}
+.cart-section .tbody td:nth-child(4){
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+    justify-content: center;
+}
+.cart-table{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    align-items: flex-end;
+    margin-bottom: 6rem;
+}
+.cart_con
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #1b1c19;
+    
+}
+.cart_con h4{
+    width: 60%;
+}
+.cart_con span {
+    width: 30%;
+    text-align: center;
+}

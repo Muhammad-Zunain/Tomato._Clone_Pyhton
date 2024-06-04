@@ -1,0 +1,42 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>signup</title>
+    <meta name="description" content />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/js/account.js" defer></script>
+    <link rel="stylesheet" href="../static/style.css" />
+</head>
+
+<body>
+
+    <div class="account">
+        <form method="post" action="{% url 'signUp' %}" class="account__detail" role="form">
+            {% csrf_token %}
+            <div class="account__sub1">
+            <h3 style="font-size: 2.5rem;">Sign Up</h3>
+            <a href="{% url 'home' %}"> <img src="{% static 'image/assets/cross_icon.png' %}" /></a>
+            </div>
+            <input type="text" name="userName"  placeholder="Your name">
+            <input type="email" name="email"  placeholder="Your email">
+            <input type="password" name="pswd"  placeholder="Password">
+            <button type="submit" class="primary__btn">Create Account</button>
+            <div class="account__sub2">
+                <input type="checkbox" name="check" id="">
+                <p>By continuing I agree to the term of new & <br> privacy policy</p>
+            </div>
+            <p>Already have an account? <a href="{% url 'logIn' %}" class="login">Login here</a></p>
+            </form>
+    </div>
+</body>
+
+</html>

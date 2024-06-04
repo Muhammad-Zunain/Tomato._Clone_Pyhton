@@ -1,0 +1,107 @@
+{% extends 'base.html' %} 
+{% block title%}  {% endblock %} 
+{% load static %}
+{% block javascript %} <script src="../static/js/index.js " defer></script> {% endblock %}
+
+{% block body %}
+<div class="about__header">
+  <span style="font-weight: bold;">Home / About Us</span>
+</div>
+<div class="about__restaurant container">
+  <h2 class="chef__heading" >About. Us<span style="width: 50%;"></span></h2>
+  <div class="restaurant__content">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni delectus incidunt, enim perferendis possimus nulla et non, amet earum voluptatum aliquam natus neque illum sequi. Magnam, ullam? Laboriosam molestias, numquam dicta corporis sed deserunt eligendi quibusdam inventore dignissimos id consectetur, sapiente in sunt voluptatum cum eos. Sunt, quidem fuga aliquid, officia doloremque dolor illo adipisci alias quibusdam nihil voluptatem ullam modi quis officiis. Ipsam, ipsa sequi quam cupiditate at eaque ad unde hic, rem maxime tempora libero illo amet et? Lorem ipsum dolor sit amet.
+  </div>
+  <div class="restaurant__img">
+    <img src="{% static 'image/assets/about_img_1.avif' %}" class="res_img1" alt="">
+    <img src="{% static 'image/assets/about_img_2.avif' %}" class="res_img2" alt="">
+    <img src="{% static 'image/assets/about_img_3.avif' %}" class="res_img3"alt="">
+  </div>
+
+</div>
+
+<div class="about__chef container" style="margin: 8rem auto;">
+  <h2 class="chef__heading">Tomato. Chefs <span></span></h2>
+  <div class="chef__content">
+    <div class="chefs">
+      <img
+      src="{% static  'image/assets/chef_1.jpg' %}"
+      alt
+      class="chef__image"
+      width="100%"
+      height="100%"
+    />
+      <div class="chef__contact">
+        <img src="{% static  'image/assets/twitter_icon.png' %}" alt />
+        <img src="{% static  'image/assets/linkedin_icon.png' %}" alt />
+      </div>
+    </div>
+    <div class="chefs">
+      <img
+        src="{% static  'image/assets/chef_2.png' %}"
+        alt
+        class="chef__image"
+        width="100%"
+        height="100%"
+      />
+      <div class="chef__contact">
+        <img src="{% static  'image/assets/twitter_icon.png' %}" alt />
+        <img src="{% static  'image/assets/linkedin_icon.png' %}" alt />
+      </div>
+    </div>
+    <div class="chefs">
+      <img
+        src="{% static  'image/assets/chef_3.jpg' %}"
+        alt
+        class="chef__image"
+        width="100%"
+        height="100%"
+      />
+      <div class="chef__contact">
+        <img src="{% static  'image/assets/twitter_icon.png' %}" alt />
+        <img src="{% static  'image/assets/linkedin_icon.png' %}" alt />
+      </div>
+    </div>
+    <div class="chefs">
+      <img
+        src="{% static  'image/assets/chef_4.png' %}"
+        alt
+        class="chef__image"
+        width="100%"
+        height="100%"
+      />
+      <div class="chef__contact">
+        <img src="{% static  'image/assets/twitter_icon.png' %}" alt />
+        <img src="{% static  'image/assets/linkedin_icon.png' %}" alt />
+      </div>
+    </div>
+    <div class="chefs">
+      <img
+        src="{% static  'image/assets/chef_5.jpg' %}"
+        alt
+        class="chef__image"
+        width="100%"
+        height="100%"
+      />
+      <div class="chef__contact">
+        <img src="{% static  'image/assets/twitter_icon.png' %}" alt />
+        <img src="{% static  'image/assets/linkedin_icon.png' %}" alt />
+      </div>
+    </div>
+    <div class="chefs">
+      <img
+        src="{% static  'image/assets/chef_6.jpg' %}"
+        alt
+        class="chef__image"
+        width="100%"
+        height="100%"
+      />
+      <div class="chef__contact">
+        <img src="{% static  'image/assets/twitter_icon.png' %}" alt />
+        <img src="{% static  'image/assets/linkedin_icon.png' %}" alt />
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  {% load static %}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>{% block title %} {% endblock %}</title>
+  <meta name="description" content />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../static/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  {% block javascript %} <script src="../static/js/index.js " defer></script> {% endblock %}
+</head>
+
+<body>
+  <nav class="container nav__bar">
+    <div class="nav__logo">
+      <a href="{% url 'home' %}"><img src="{% static '/image/assets/logo.png' %}" alt="Tomato Logo" /></a>
+    </div>
+    <ul class="nav__item">
+      <a href="{% url 'home' %}">
+        <li class="{% if request.path == '/'%} active {% endif %} nav__link">Home</li>
+      </a>
+      <a href>
+        <li class="{% if request.path == '/menu'%} active {% endif %} nav__link">Menu</li>
+      </a>
+      <a href>
+        <li class="{% if request.path == '/Mobile'%} active {% endif %} nav__link">Mobile
+          app</li>
+      </a>
+      <a href="{% url 'about' %}">
+        <li class="{% if request.path == '/about'%} active {% endif %} nav__link">About</li>
+      </a>
+      <a href="{% url 'contact' %}">
+        <li class="{% if request.path == '/contact'%} active {% endif %} nav__link">Contact</li>
+      </a>
+    </ul>
+    <div class="nav__other">
+      <div class="nav__search">
+        <img src="{% static '/image/assets/search_icon.png' %}" />
+      </div>
+      <div class="nav__cart">
+        <a href="{% url 'cart' %}"><img src="{% static '/image/assets/basket_icon.png' %}" class="Cart" /></a>
+        <span class="cart_check"></span>
+      </div>
+      <!-- {% if customer != None %}
+      <div class="customer__account" style="display: flex;justify-content: center;align-items: center; column-gap: 2rem;" >
+        <img src="{% static '/image/assets/profile_icon.png' %}" style="cursor: pointer;" />
+        <p style="font-size: 1.8rem; font-weight: 600; text-transform: uppercase; color: tomato;">{{customer.user_name}}</p>
+      </div> -->
+      <!-- {% else %} -->
+      <button class="signIn__btn primary__btn signIn" type="button"><a href="{% url 'signUp' %}">Sign In</a></button>
+      <!-- {% endif %} -->
+    </div>
+  </nav>
+
+  {% block body %} {% endblock%}
+
+  <footer style="background-color: #1b1c19">
+    <div class="container footer__content">
+      <div class="footer__sub">
+        <a href="{% url 'home' %}"><img src="{% static '/image/assets/logo.png' %}" alt="Tomato Logo" /></a>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+          iste facilis ea explicabo et nihil recusandae earum. Eum unde
+          tempora voluptatum officia iure aliquam labore perspiciatis quia
+          magni! Magni aut. Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Mollitia, libero.
+        </p>
+        <div class="social__link">
+          <a href><img src="{% static '/image/assets/facebook_icon.png' %}" alt /></a>
+          <a href><img src="{% static '/image/assets/twitter_icon.png' %}" alt /></a>
+          <a href><img src="{% static '/image/assets/linkedin_icon.png' %}" alt /></a>
+        </div>
+      </div>
+      <div class="footer__link">
+        <h4 style="text-transform: uppercase">Company</h4>
+        <p>Home <br />About us <br />Delivery <br />Privacy Policy</p>
+      </div>
+      <div class="footer__contact">
+        <h4 style="text-transform: uppercase">get in touch</h4>
+        <p>+92 - 3322321393 <br />tomatoCompany@gmail.com</p>
+      </div>
+    </div>
+    <hr class="container" style="
+            height: 4px;
+            background-color: #fff;
+            border-radius: 3px;
+            margin-top: 1rem;
+          " />
+    <p style="text-align: center; padding: 3rem 0;">Copyright 2024 &copy;
+      Tomato Food - All Right Reserved</p>
+  </footer>
+</body>
+
+</html>

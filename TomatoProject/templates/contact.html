@@ -1,0 +1,73 @@
+{% extends 'base.html' %} 
+
+{% block title%} {% endblock %} 
+{% load static %}
+{% block javascript %} <script src="../static/js/index.js " defer></script> {% endblock %}
+
+{% block body %}
+
+<div class="about__header">
+    <span style="font-weight: bold">Home / Contact Us</span>
+</div>
+
+
+<div
+    class="container"
+    style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8rem auto;
+  ">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4942066946605!2d58.46194965766754!3d23.616734531610355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91f8b3166fcdc5%3A0xf94e1f2302859445!2sTomato%20Restaurant%20at%20InterContinental%20Muscat!5e0!3m2!1sen!2s!4v1714851091886!5m2!1sen!2s"
+        width="1200px"
+        height="550px"
+        style="border: 0"
+        allowfullscreen="true"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+<div class="contact">
+    <div class="contact__contents container">
+
+        <div class="contact__detail">
+            <div class="contact__map">
+                <img src="{% static 'image/assets/map.png' %}" alt="" style="display: flex; align-items: center; justify-content: center;padding: 1rem; border-radius: 70%; border: 7px solid rgb(67, 64, 64);" />
+                <p>OUR MAIN OFFICE</p>
+                <p>Tomato Restaurant Muscat Al Kharjiya Street Oman</p>
+            </div>
+            <div class="contact__phone">
+                <img src="{% static 'image/assets/phone.png' %}" alt />
+                <p>PHONE</p>
+                <p>
+                    +92 - 3322321393 / <br />
+                    +92 - 33223146854
+                </p>
+            </div>
+            <div class="contact__fax">
+                <img src="{% static 'image/assets/fax_machine.png' %}" alt />
+                <p>FAX</p>
+                <p>1 - 547 -412 - 29873</p>
+            </div>
+            <div class="contact__email">
+                <img src="{% static 'image/assets/email.png' %}" alt />
+                <p>EMAIL</p>
+                <p>tomatoCompany@gmail.com</p>
+            </div>
+        </div>
+        <div class="contact__entry">
+            <h2 class="chef__heading" >Contact. Us<span style="width: 20%;"></span></h2>
+            <form action="">
+                <input type="text" name="" id="" placeholder="Your name">
+                <input type="email" placeholder="Email">
+                <textarea name="" id="" cols="50" rows="20" placeholder="Type message here"></textarea>
+                <button type="submit" class="primary__btn " style="width: 200px;">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

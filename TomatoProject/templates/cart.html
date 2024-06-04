@@ -1,0 +1,55 @@
+{% extends 'base.html' %} 
+{% block title%} {% endblock %} 
+{% load static %} 
+{% block javascript %}
+
+<!-- <script src="../static/js/index.js " defer></script>  -->
+<script src="../static/js/cart.js " defer></script>
+
+{% endblock %} {% block body %}
+<section class="container check_out_con" style="min-height: 82vh">
+    <table class="cart-section">
+        <thead>
+            <tr>
+                <td>Remove</td>
+                <td>Food</td>
+                <td>Food Name</td>
+                <td>Quantity</td>
+                <td>Subtotal</td>
+            </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+    </table>
+
+    <div class="cart-table">
+        <span style="
+        width: 400px;
+        height: 4px;
+        background-color: tomato;
+        border-radius: 3px;
+      "></span>
+
+        <div style="width: 400px;">
+            <div  class="cart_con">
+                <h4>SubTotal</h4><span class="cart__sub__amount"></span>
+            </div>
+            <div class="cart_con">
+                <h4>Delivery Charge</h4>
+                <span>$5</span>
+            </div>
+            <div  class="cart_con">
+                <h4>Total Amount</h4>
+                <span class="cart__total__amount"></span>
+            </div>
+            <button class="secondary__btn" style="
+          padding: 1rem 2rem;
+          border-radius: 4px;
+          font-weight: 500;
+          font-size: 1.5rem;
+        " type="button">
+                Check Out
+            </button>
+        </div>
+    </div>
+</section>
+{% endblock %}
